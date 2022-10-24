@@ -5,7 +5,7 @@ import com.crowdar.core.actions.MobileActionManager;
 import com.crowdar.examples.constants.HomeConstants;
 import com.crowdar.examples.services.HomeService;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.When;
 
 /**
  * This class handles the steps in the features files and connects with the service in case of having business logic.
@@ -18,14 +18,20 @@ public class HomeSteps extends PageSteps {
         HomeService.isViewLoaded();
     }
 
-    @When("The user changes the language")
-    public void doChangeLanguage() {
-        MobileActionManager.click(HomeConstants.CHANGE_LANGUAGE_BUTTON_LOCATOR);
+    @When("The user select the 'Add time entry' button")
+    public void selectTheAddTimeButton() {
+        HomeService.selectTheAddTimeButton();
     }
 
-    @When("The user log out of the app")
-    public void doSignOut() {
-        MobileActionManager.click(HomeConstants.SIGN_OUT_BUTTON_LOCATOR);
-    }
+    // DEMO LIPPIA
+//    @When("The user changes the language")
+//    public void doChangeLanguage() {
+//        MobileActionManager.click(HomeConstants.CHANGE_LANGUAGE_BUTTON_LOCATOR);
+//    }
+//
+//    @When("The user log out of the app")
+//    public void doSignOut() {
+//        MobileActionManager.click(HomeConstants.SIGN_OUT_BUTTON_LOCATOR);
+//    }
 
 }
