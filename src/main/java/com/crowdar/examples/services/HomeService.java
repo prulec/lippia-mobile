@@ -23,7 +23,7 @@ public class HomeService {
         Assert.assertTrue(MobileActionManager.isVisible(HomeConstants.LOCATOR_ADD_TIME_BUTTON), HomeConstants.MESSAGE_VIEW_NOT_DISPLAYED);
     }
 
-    public static void selectTheAddTimeButton() {
+    public static void tapOnTheAddTimeButton() {
         MobileActionManager.click(HomeConstants.LOCATOR_ADD_TIME_BUTTON);
     }
 }
