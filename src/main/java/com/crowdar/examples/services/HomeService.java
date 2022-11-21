@@ -11,11 +11,7 @@ import org.testng.Assert;
  */
 public class HomeService {
 
-    // DEMO LIPPIA
-//    public static void isViewLoaded() {
-//        MobileActionManager.waitVisibility(HomeConstants.SIGN_OUT_BUTTON_LOCATOR);
-//        Assert.assertTrue(MobileActionManager.isVisible(HomeConstants.CHANGE_LANGUAGE_BUTTON_LOCATOR), HomeConstants.VIEW_NOT_DISPLAYED_MESSAGE);
-//    }
+    public static final ThreadLocal<Boolean> DARKMODE_STATUS = new ThreadLocal<>();
 
     // CLOCKIFY
     public static void isViewLoaded() {
@@ -25,5 +21,35 @@ public class HomeService {
 
     public static void tapOnTheAddTimeButton() {
         MobileActionManager.click(HomeConstants.LOCATOR_ADD_TIME_BUTTON);
+    }
+
+    public static void enterInSettings() {
+        MobileActionManager.click(HomeConstants.LOCATOR_NAVIGATIONDRAWER);
+        MobileActionManager.click(HomeConstants.LOCATOR_SETTINGDRAWER);
+    }
+
+    public static void checkDarkModeInSettings() {
+        String darkmodeStatus = MobileActionManager.getElement(HomeConstants.LOCATOR_DARKMODE_TOGGLE).getAttribute("text");
+        if (darkmodeStatus.equals("ON")) {
+            DARKMODE_STATUS.set(Boolean.TRUE);
+        } else {
+            DARKMODE_STATUS.set(Boolean.FALSE);
+        }
+    }
+
+    public static void changeDarkModeStatus() {
+        MobileActionManager.click(HomeConstants.LOCATOR_DARKMODE_TOGGLE);
+    }
+
+    public static void validateDarkModeStatus() {
+        Boolean initialStatus = DARKMODE_STATUS.get();
+        Boolean currentStatus = MobileActionManager.getElement(HomeConstants.LOCATOR_DARKMODE_TOGGLE).getAttribute("text").equals("ON");
+        Assert.assertFalse(initialStatus && currentStatus);
+    }
+
+    public static void logout() {
+        MobileActionManager.click(HomeConstants.LOCATOR_NAVIGATIONDRAWER);
+        MobileActionManager.click(HomeConstants.LOCATOR_LOGOUTDRAWER);
+        MobileActionManager.click(HomeConstants.LOCATOR_LOGOUTCONFIRM_BUTTON);
     }
 }

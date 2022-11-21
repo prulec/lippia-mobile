@@ -67,6 +67,7 @@ public class AddEntryService {
         // date validation
         try {
             LocalDate start = LocalDate.parse(startString);
+            System.out.println(start);
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Invalid start date!");
@@ -132,5 +133,17 @@ public class AddEntryService {
         LocalDate today = LocalDate.now();
         LocalDate entryDate = LocalDate.parse(entryDateString);
         Assert.assertTrue(today.compareTo(entryDate) >= 0, "Date shouldn't be latter than today!");
+    }
+
+    public static void discardNewEntryAddition() {
+        MobileActionManager.click(AddEntryConstants.LOCATOR_BACK_BUTTON);
+        MobileActionManager.click(AddEntryConstants.LOCATOR_DISCARDCONFIRM_BUTTON);
+    }
+
+    public static void validateTimeEntryNotAppearing() {
+        String title = TITLE.get();
+        MobileActionManager.waitVisibilities(HomeConstants.LOCATOR_LISTITEMS);
+        int found = MobileActionManager.getElements(HomeConstants.LOCATOR_ENTRY_TITLE_START + title + HomeConstants.LOCATOR_ENTRY_TITLE_END).size();
+        Assert.assertEquals(found, 0, "The element is present in the entries list!");
     }
 }

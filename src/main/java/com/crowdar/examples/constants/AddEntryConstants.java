@@ -24,6 +24,7 @@ public class AddEntryConstants {
     public static final String LOCATOR_NEXTMONTH = "xpath://android.widget.ImageButton[@content-desc=\"Next month\"]";
     public static final String LOCATOR_SAVEDATE_BUTTON = "xpath://android.widget.Button[@text='SAVE']";
     public static final String LOCATOR_BACK_BUTTON = "xpath://android.widget.ImageButton[@content-desc=\"Navigate up\"]";
+    public static final String LOCATOR_DISCARDCONFIRM_BUTTON = "xpath://android.widget.TextView[@text='DISCARD']";
     public static final Map<String,Integer> MONTHS = getMonths();
     private static Map<String,Integer> getMonths() {
         Map<String,Integer> data = new HashMap<>();

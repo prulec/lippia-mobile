@@ -49,4 +49,14 @@ public class AddEntrySteps extends PageSteps {
     public void theTimeEntryIsDisplayedAndTheStartDateIsLessOrEqualsToTheCurrentDate(int hours, int minutes, String start, String title) {
         AddEntryService.validateTimeEntryWithStartDate(hours, minutes, start);
     }
+
+    @When("The user discards the addition of the new time entry")
+    public void theUserDiscardsTheAdditionOfTheNewTimeEntry() {
+        AddEntryService.discardNewEntryAddition();
+    }
+
+    @Then("The time entry is not saved and doesn't appear in the entries list")
+    public void theTimeEntryIsNotSavedAndDoesnTAppearInTheEntriesList() {
+        AddEntryService.validateTimeEntryNotAppearing();
+    }
 }

@@ -3,6 +3,7 @@ package com.crowdar.examples.steps;
 import com.crowdar.core.PageSteps;
 import com.crowdar.examples.services.AddEntryService;
 import com.crowdar.examples.services.HomeService;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -23,4 +24,24 @@ public class HomeSteps extends PageSteps {
         AddEntryService.isViewLoaded();
     }
 
+    @When("The user enters in settings and checks the current dark mode status")
+    public void theUserEntersInSettingsAndChecksTheCurrentDarkModeStatus() {
+        HomeService.enterInSettings();
+        HomeService.checkDarkModeInSettings();
+    }
+
+    @And("The user taps on the 'Enable dark mode' toggle")
+    public void theUserTapsOnTheEnableDarkModeToggle() {
+        HomeService.changeDarkModeStatus();
+    }
+
+    @Then("The dark mode status is now the opposite of the initial one")
+    public void theDarkModeStatusIsNowTheOppositeOfTheInitialOne() {
+        HomeService.validateDarkModeStatus();
+    }
+
+    @When("The user logs out")
+    public void theUserLogsOut() {
+        HomeService.logout();
+    }
 }
