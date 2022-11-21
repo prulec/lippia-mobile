@@ -1,0 +1,10 @@
+{
+  "deviceName": "{{deviceName}}",
+  "app": "{{app}}",
+  "platformName": "Android",
+  "resetKeyboard": "true",
+  "unicodeKeyboard": "true",
+  "appWaitForLaunch": "false",
+  "appPackage": "me.clockify.android",
+  "appActivity": "me.clockify.android.presenter.SplashActivity"
+}

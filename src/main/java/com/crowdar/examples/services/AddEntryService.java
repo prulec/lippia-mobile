@@ -61,6 +61,7 @@ public class AddEntryService {
         MobileActionManager.waitVisibility(HomeConstants.LOCATOR_DELETE_BUTTON);
         MobileActionManager.click(HomeConstants.LOCATOR_DELETE_BUTTON);
         MobileActionManager.waitVisibility(HomeConstants.LOCATOR_ADD_TIME_BUTTON);
+        MobileActionManager.waitInvisibility(HomeConstants.LOCATOR_ENTRY_TITLE_START + title + HomeConstants.LOCATOR_ENTRY_MENU_END);
     }
 
     public static void pickStartDate(String startString) {

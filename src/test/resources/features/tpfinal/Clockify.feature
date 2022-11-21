@@ -4,7 +4,7 @@ Feature: As a potential client i want to interact with the mobile application
   Background:
     Given The app is loaded correctly
 
-  @Login @Success @Smoke
+  @Login @Success @Smoke @Now
   Scenario Outline: (1) The user log in to the app successfully
     When The user logs in the application with: <email>, <password>
     Then Home page is displayed
@@ -26,7 +26,7 @@ Feature: As a potential client i want to interact with the mobile application
       | hours | minutes | title           | project |
       | 3     | 5       | Time entry Test | Tests   |
 
-  @AddTimeEntryWithDates @Smoke
+  @AddTimeEntryWithDates
   Scenario Outline: (3) The user add new time with date successfully and date must be less or equals to the current date
     And The user logs in the application with: mofola6180@cadolls.com, Example321
     And Home page is displayed
@@ -37,7 +37,7 @@ Feature: As a potential client i want to interact with the mobile application
     When The user selects the start date '<start>' in date picker
     And The user saves the time entry
     Then The time entry with <hours> hours <minutes> minutes duration, start date '<start>', and title '<title>, plus a timestamp' is displayed at Home page and the start date is less or equals to the current date
-    @Success
+    @Success @Smoke
     Examples:
       | start      | hours | minutes | title           | project |
       | 2021-12-15 | 2     | 4       | Time entry Test | Tests   |
@@ -60,7 +60,7 @@ Feature: As a potential client i want to interact with the mobile application
       | hours | minutes | title           | project |
       | 2     | 6       | Time entry Test | Tests   |
 
-  @EnableDarkMode @Success @Smoke
+  @DarkMode @Success @Smoke
   Scenario: (5) The user changes the dark mode status in settings
     And The user logs in the application with: mofola6180@cadolls.com, Example321
     And Home page is displayed
@@ -68,8 +68,8 @@ Feature: As a potential client i want to interact with the mobile application
     And The user taps on the 'Enable dark mode' toggle
     Then The dark mode status is now the opposite of the initial one
 
-  @Logout @Success @Smoke @Now
-  Scenario: (6) The user log in then logs out
+  @Logout @Success @Smoke
+  Scenario: (6) The user log in then logs out successfully
     And The user logs in the application with: mofola6180@cadolls.com, Example321
     And Home page is displayed
     When The user logs out

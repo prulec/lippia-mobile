@@ -10,7 +10,7 @@ public class HomeConstants {
     public static final String LOCATOR_DELETE_BUTTON = "xpath://android.widget.TextView[@text='Delete']";
 
     public static final String LOCATOR_LISTITEMS = "xpath://androidx.recyclerview.widget.RecyclerView/*";
-    public static final String LOCATOR_NAVIGATIONDRAWER = "xpath://android.widget.ImageButton[@content-desc=\"Open navigation drawer\"]";
+    public static final String LOCATOR_NAVIGATIONDRAWER = "xpath://*[contains(@resource-id,'toolbar')]/*[@index=0]";
     public static final String LOCATOR_SETTINGDRAWER = "xpath://android.widget.CheckedTextView[@text='Settings']";
     public static final String LOCATOR_LOGOUTDRAWER = "xpath://android.widget.CheckedTextView[@text='Log out']";
     public static final String LOCATOR_LOGOUTCONFIRM_BUTTON = "xpath://android.widget.TextView[@text='CONFIRM']";

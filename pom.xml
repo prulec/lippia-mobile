@@ -28,7 +28,7 @@
         <profile>
             <id>Local</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <crowdar.driverHub>http://127.0.0.1:4723/wd/hub</crowdar.driverHub>
@@ -49,11 +49,30 @@
             </properties>
         </profile>
         <profile>
-            <id>Android</id>
+            <id>AndroidEmulated</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
+                <crowdar.driverHub>http://127.0.0.1:4723/wd/hub</crowdar.driverHub>
+                <cucumber.runner>testng.xml</cucumber.runner>
+                <crowdar.avd>Pixel3</crowdar.avd>
+                <crowdar.appLocation>./crowdar/tpfinal/lippia-mobile/sample_apk/clockify.apk</crowdar.appLocation>
+                <crowdar.deviceName>Pixel3</crowdar.deviceName>
+                <crowdar.projecttype>MOBILE_ANDROID</crowdar.projecttype>
+            </properties>
+        </profile>
+        <profile>
+            <id>AndroidPhysical</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <crowdar.projecttype.driverCapabilities.jsonFile>src/main/resources/capabilities/androidPhysicalCapabilities.json</crowdar.projecttype.driverCapabilities.jsonFile>
+                <crowdar.driverHub>http://127.0.0.1:4723/wd/hub</crowdar.driverHub>
+                <cucumber.runner>testng.xml</cucumber.runner>
+                <crowdar.appLocation>./crowdar/tpfinal/lippia-mobile/sample_apk/clockify.apk</crowdar.appLocation>
+                <crowdar.deviceName>A32</crowdar.deviceName>
                 <crowdar.projecttype>MOBILE_ANDROID</crowdar.projecttype>
             </properties>
         </profile>

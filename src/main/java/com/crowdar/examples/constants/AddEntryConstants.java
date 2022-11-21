@@ -20,10 +20,10 @@ public class AddEntryConstants {
     public static final String LOCATOR_FIRSTDAY = "xpath://*[contains(@resource-id,'month_view')]/android.view.View[@index=0]";
     public static final String LOCATOR_CURRENTDAY = "xpath://*[contains(@resource-id,'month_view')]/android.view.View[@checked='true']";
     public static final String LOCATOR_DAY_START = "xpath://*[contains(@resource-id,'month_view')]/android.view.View[@index=";
-    public static final String LOCATOR_PREVIOUSMONTH = "xpath://android.widget.ImageButton[@content-desc=\"Previous month\"]";
-    public static final String LOCATOR_NEXTMONTH = "xpath://android.widget.ImageButton[@content-desc=\"Next month\"]";
+    public static final String LOCATOR_PREVIOUSMONTH = "xpath://android.widget.ImageButton[contains(@resource-id,'prev')]";
+    public static final String LOCATOR_NEXTMONTH = "xpath://android.widget.ImageButton[contains(@resource-id,'next')]";
     public static final String LOCATOR_SAVEDATE_BUTTON = "xpath://android.widget.Button[@text='SAVE']";
-    public static final String LOCATOR_BACK_BUTTON = "xpath://android.widget.ImageButton[@content-desc=\"Navigate up\"]";
+    public static final String LOCATOR_BACK_BUTTON = "xpath://*[contains(@resource-id,'toolbar')]/*[@index=0]";
     public static final String LOCATOR_DISCARDCONFIRM_BUTTON = "xpath://android.widget.TextView[@text='DISCARD']";
     public static final Map<String,Integer> MONTHS = getMonths();
     private static Map<String,Integer> getMonths() {
@@ -40,6 +40,18 @@ public class AddEntryConstants {
         data.put("October", 10);
         data.put("November", 11);
         data.put("December", 12);
+        data.put("enero", 1);
+        data.put("febrero", 2);
+        data.put("marzo", 3);
+        data.put("abril", 4);
+        data.put("mayo", 5);
+        data.put("junio", 6);
+        data.put("julio", 7);
+        data.put("agosto", 8);
+        data.put("septiembre", 9);
+        data.put("octubre", 10);
+        data.put("noviembre", 11);
+        data.put("diciembre", 12);
         return data;
     }
 }
